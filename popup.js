@@ -49,20 +49,10 @@ async function init() {
         span.target = '_blank';
         span.href = 'https://web.archive.org/web/' + visitTime2LinkString(visit)+ '*/' + data.url;
         var td = tr.insertCell()
-
-        switch(idCounter){
-            case 1:
-                td.textContent = idCounter + '. Current: ';
-                break;
-            case 2:
-                td.textContent = idCounter + '. Before';
-                break;
-            default:
-                td.textContent = idCounter + '. ';
-                break;
-        }
-        td.appendChild(span)
-        idCounter++
+        td.textContent = idCounter + '. ';
+        var td2 = tr.insertCell();
+        td2.appendChild(span);
+        idCounter++;
     });
 }
 
